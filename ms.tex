@@ -1,0 +1,175 @@
+\documentclass[12pt,preprint]{aastex}
+
+\usepackage{amsmath}
+
+\newcounter{address}
+%\newcommand{\latin}[1]{\textit{#1}}
+%\newcommand{\cf}{\latin{cf.}}
+\newcommand{\eqnnumber}{Equation}
+\newcommand{\eqnname}{Equation}
+\newcommand{\eg}{e.g.}
+\newcommand{\ie}{i.e.}
+\newcommand{\Ie}{I.e.}
+%\newcommand{\vs}{\latin{vs.}}
+\newcommand{\etal}{et~al.}
+%\newcommand{\Hipparcos}{\textit{Hipparcos}}
+\newcommand{\normal}{{\cal N}}
+\newcommand{\wishart}{{\cal W}}
+\newcommand{\dirichlet}{{\cal D}}
+\renewcommand{\vec}[1]{\mathbf{#1}} % boldface for vectors
+\newcommand{\inv}{^{-1}}
+\newcommand{\bb}{\vec{b}}
+\newcommand{\cc}{\vec{c}}
+\newcommand{\ee}{\vec{\hat{e}}}
+\newcommand{\mm}{\vec{m}}
+\newcommand{\vv}{\vec{v}}
+\newcommand{\xx}{\vec{x}}
+\newcommand{\zz}{\vec{z}}
+\newcommand{\ww}{\vec{w}}
+\newcommand{\bij}{\bb_{ij}}
+\newcommand{\bbij}{\bij}
+%\newcommand{\cci}{\cc_i}
+%\newcommand{\eex}{\vec{\hat{x}}}
+%\newcommand{\eey}{\vec{\hat{y}}}
+%\newcommand{\eez}{\vec{\hat{z}}}
+%\newcommand{\eer}{\vec{\hat{r}}_i}
+%\newcommand{\eel}{\vec{\hat{l}}_i}
+%\newcommand{\eeb}{\vec{\hat{b}}_i}
+\newcommand{\mmj}{\mm_j}
+\newcommand{\mmk}{\mm_k}
+\newcommand{\vvi}{\vv_i}
+\newcommand{\vvj}{\vv_j}
+%\newcommand{\vvdisk}{\vv_\mathrm{disk}}
+%\newcommand{\Kdisk}{K_\mathrm{disk}}
+%\newcommand{\vvhalo}{\vv_\mathrm{halo}}
+%\newcommand{\vvlsr}{\vv_\mathrm{LSR}}
+%\newcommand{\vvsun}{\vv_\odot}
+\newcommand{\wwi}{\ww_i}
+\newcommand{\wwj}{\ww_j}
+\newcommand{\wwk}{\ww_k}
+\newcommand{\ten}[1]{\mathbf{#1}} % boldface for tensors
+\newcommand{\BB}{\ten{B}}
+\newcommand{\CC}{\ten{C}}
+\newcommand{\QQ}{\ten{Q}}
+\newcommand{\RR}{\ten{R}}
+\renewcommand{\SS}{\ten{S}}
+\newcommand{\TT}{\ten{T}}
+\newcommand{\AAA}{\ten{A}}
+\newcommand{\VV}{\ten{V}}
+\newcommand{\PP}{\mbox{\bf P}}
+\newcommand{\WW}{\ten{W}}
+\newcommand{\II}{\ten{I}}
+\newcommand{\BBij}{\BB_{ij}}
+\newcommand{\CCi}{\CC_i}
+\newcommand{\QQi}{\QQ_i}
+\newcommand{\RRi}{\RR_i}
+\newcommand{\SSi}{\SS_i}
+\newcommand{\VVj}{\VV_{\!j}} % \! must be *inside* the subscript, not outside
+\newcommand{\VVk}{\VV_{\!k}} % \! must be *inside* the subscript, not outside
+%\newcommand{\VVdisk}{\VV_\mathrm{\!disk}}
+%\newcommand{\VVhalo}{\VV_\mathrm{\!halo}}
+\newcommand{\TTij}{\TT_{ij}}
+\newcommand{\TTik}{\TT_{ik}}
+\newcommand{\T}{^{\scriptscriptstyle \top}}   % transpose
+\newcommand{\iT}{^{\scriptscriptstyle -\top}} % inverse transpose
+\newcommand{\tr}{\mathrm{tr}}                 % trace
+\newcommand{\alphaj}{\alpha_j}
+\newcommand{\alphak}{\alpha_k}
+%\newcommand{\alphadisk}{\alpha_\mathrm{disk}}
+%\newcommand{\alphahalo}{\alpha_\mathrm{halo}}
+\newcommand{\qij}{q_{ij}}
+\newcommand{\pij}{p_{ij}}
+\newcommand{\pik}{p_{ik}}
+\newcommand{\qqj}{q_j}
+%\newcommand{\subsamplecolor}{ 0.654<(B-V)< 0.685}
+\newcommand{\trace}{\mathrm{Trace}}
+\newcommand{\norm}{|\!|}
+\newcommand{\MLE}{MLE}
+\newcommand{\EPhi}{\langle\Phi\rangle}
+
+\newcommand{\dd}{\textnormal{d}}
+
+\newcommand{\ra}{\ensuremath{\alpha}}
+\newcommand{\dec}{\ensuremath{\delta}}
+\newcommand{\pmra}{\ensuremath{\mu_{\ra}}}
+\newcommand{\pmdec}{\ensuremath{\mu_{\dec}}}
+\newcommand{\eqx}{\ensuremath{x_{\textnormal{eq}}}}
+\newcommand{\eqy}{\ensuremath{y_{\textnormal{eq}}}}
+\newcommand{\eqz}{\ensuremath{z_{\textnormal{eq}}}}
+\newcommand{\gall}{{\it l}}
+\newcommand{\galb}{{\it b}}
+\newcommand{\pmll}{\ensuremath{\mu_\gall}}
+\newcommand{\pmbb}{\ensuremath{\mu_\galb}}
+\newcommand{\galx}{\ensuremath{x}}
+\newcommand{\galy}{\ensuremath{y}}
+\newcommand{\galz}{\ensuremath{z}}
+\newcommand{\galU}{\ensuremath{U}}
+\newcommand{\galV}{\ensuremath{V}}
+\newcommand{\galW}{\ensuremath{W}}
+\newcommand{\parallax}{\ensuremath{\varpi}}
+\newcommand{\radialdist}{\ensuremath{d}}
+\newcommand{\vrr}{\ensuremath{v_r}}
+\newcommand{\vra}{\ensuremath{v_{\ra}}}
+\newcommand{\vdec}{\ensuremath{v_{\dec}}}
+\newcommand{\vll}{\ensuremath{v_\gall}}
+\newcommand{\vbb}{\ensuremath{v_\galb}}
+\newcommand{\vernal}{\ensuremath{\Upsilon}}
+\newcommand{\ngp}{\textnormal{NGP}}
+\newcommand{\ngpg}{\textnormal{G}}
+\newcommand{\ncp}{\textnormal{NCP}}
+\newcommand{\ncpp}{\textnormal{P}}
+\newcommand{\gc}{\textnormal{GC}}
+\newcommand{\gcc}{\textnormal{C}}
+\newcommand{\rangp}{\ensuremath{\ra_\ngp}}
+\newcommand{\decngp}{\ensuremath{\dec_\ngp}}
+\newcommand{\ragc}{\ensuremath{\ra_\gc}}
+\newcommand{\decgc}{\ensuremath{\dec_\gc}}
+\newcommand{\degree}{^{\circ}}
+\newcommand{\matrixleft}{\left[}
+\newcommand{\matrixright}{\right]}
+\newcommand{\arcsecs}{\textnormal{as}}
+
+\begin{document}
+
+\title{Stellar kinematics}
+\author{
+  Jo Bovy}
+
+\date{\centering{\it Draft, \today}}
+
+\begin{abstract}
+We present the transformations from observed kinematical quantities
+(\ra,\dec,\parallax,\pmra,\pmdec) into Galactic quantities
+(\galU,\galV,\galW) and (\pmll,\pmbb).
+\end{abstract}
+
+\input{stellarkinematics}
+
+
+
+
+\begin{thebibliography}{5}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+
+\bibitem[{{Binney} \& {Merrifield}(1998)}]{1998gaas.book.....B}
+{Binney}, J. \& {Merrifield}, M. 1998, {Galactic Astronomy} (Princeton
+  University Press)
+
+\bibitem[{{Blaauw} {et~al.}(1960){Blaauw}, {Gum}, {Pawsey}, \&
+  {Westerhout}}]{1960MNRAS.121..123B}
+{Blaauw}, A., {Gum}, C.~S., {Pawsey}, J.~L., \& {Westerhout}, G. 1960, \mnras,
+  121, 123
+
+\bibitem[{{Green}(1985)}]{Green85a}
+{Green}, R.~M. 1985, {Spherical astronomy} (Cambridge University Press)
+
+\bibitem[{{Johnson} \& {Soderblom}(1987)}]{1987AJ.....93..864J}
+{Johnson}, D.~R.~H. \& {Soderblom}, D.~R. 1987, \aj, 93, 864
+
+\bibitem[{{Ohlsson}(1932)}]{Ohlsson32a}
+{Ohlsson}, J. 1932, Ann.~Lund Obs., 6
+
+\end{thebibliography}
+
+\end{document}
+
