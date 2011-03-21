@@ -19,15 +19,15 @@ angle between the meridian through \ncp\ and $X$ and a reference
 meridian. This reference meridian is defined as the meridian which
 intersects the celestial equator (the intersection of the plane in
 which the Earth's equator lies and the celestial sphere) at the point
-in which the intersection of the ecliptic, i.e.~the plane in which the
+in which the intersection of the ecliptic, \ie, the plane in which the
 Earth's orbit around the Sun lies, with the celestial sphere, the
 ``celestial ecliptic`'' if you will, intersects with the celestial
 equator; this defines two points, the point chosen is the point at
 which the Sun crosses the equatorial plane from South to North. This
 event is called the (northern) vernal equinox and it happens around
 March 21. The location of the vernal equinox on the celestial sphere
-is denoted by \vernal\ \citep[][pp.14-6]{Green85a}. Therefore, \ra\
-and \dec\ are formally defined as
+is denoted by \vernal\ \citep[][pp.14-6]{Green85a}. Therefore,
+\ra\ and \dec\ are formally defined as
 \begin{align}
 \dec &= 90\degree - \ncpp X\, ,\\
 \ra &= \vernal \ncpp X \, .
@@ -39,7 +39,7 @@ BOVY: A FIGURE WOULD PROBABLY HELP TO MAKE THE PREVIOUS PARAGRAPH
 COMPREHENSIBLE.
 
 
-Galactic coordinates, i.e.~a system of coordinates that has the
+Galactic coordinates, \ie, a system of coordinates that has the
 Galactic plane as its equatorial plane, were introduced as early as
 the late eighteenth century by William Herschel and a variety of
 definitions based mainly on ambiguities in the definition of the
@@ -74,9 +74,9 @@ longitudes can take on any value between $0\degree$ and $360\degree$.
 
 To derive the transformation between equatorial coordinates of a star
 and the Galactic coordinates we need the coordinates of the \ngp\ and
-the \gc\ in the equatorial frame, i.e.~we need $\rangp$,
-$\decngp$, and the position angle of the Galactic center $\theta$,
-or equivalently, the Galactic longitude of the north celestial
+the \gc\ in the equatorial frame, \ie, we need $\rangp$, $\decngp$,
+and the position angle of the Galactic center $\theta$, or
+equivalently, the Galactic longitude of the north celestial
 pole. These quantities were defined for the epoch 1950.0 as follows:
 \citep{1960MNRAS.121..123B}
 \begin{align}\label{eq:IAUNGPGC}
@@ -245,7 +245,7 @@ $\TT$ for epochs other than 1950.0 one needs to use the values for
 different from the 1950.0 values in general because of the effects of
 Luni-solar precession, planetary precession and nutation. The
 definition of the equatorial coordinate system is fully specified by
-the Earth's rotation axis, i.e.~the North celestial pole, and the
+the Earth's rotation axis, \ie, the North celestial pole, and the
 position of the ecliptic, which together with the equatorial plane
 defines the vernal equinox. Therefore, any changes to the orientation
 of the Earth's rotation axis or the position of the ecliptic will
@@ -267,7 +267,7 @@ called the nutation.
 
 The other planets in the Solar system have a negligible influence on
 the orientation of the Earth's rotational axis, however, planetary
-perturbations do influence the Earth's orbit around the Sun, i.e.~the
+perturbations do influence the Earth's orbit around the Sun, \ie, they
 induce small changes in the orbital elements describing the orbit of
 the Earth around the Sun. In particular, the inclination of the
 ecliptic is not fixed. This gives rise to the so-called planetary
@@ -326,8 +326,7 @@ Therefore, we can find $\theta$ by solving the following set of equations
 \end{align}
 
 The positions of the \ngp\ and the \gc\ for the epoch J2000.0 are
-given by \citep[][BOVY: BUT CHECK WITH ALLEN'S ASTROPHYSICAL
-QUANTITIES]{1998gaas.book.....B}
+given by \citep[]{1998gaas.book.....B}
 \begin{align}
 (\rangp,\decngp) & = (192\degree.85948,27\degree.12825)\nonumber\\
 (\ragc, \decgc) &= (266\degree.405,-28\degree.936)\, \label{eq:ngpgcJ2000.0}.
@@ -351,20 +350,32 @@ transformation as in (\ref{eq:radectolbmatrix}).
 
 \section{Parallax}
 
-BOVY: ESTABLISH WHAT A PARALLAX IS AND HOW IT GIVES A MEASURE OF THE DISTANCE
+The annual motion of the Earth around the Sun gives rise to an
+apparent displacement of a star relative to background objects that is
+inversely proportional to the distance to the star. Measurements of
+this apparent shift, or parallax, can thus be used to determine the
+distance to stars. Parallaxes are traditionally reported in units of
+arcseconds; a star with a parallax of 1 arcsecond is defined to be at
+a distance of 1 parsec (pc), which is approximately $3\times 10^{16}$
+m. The intrinsic motion of a star also gives rise to a systematic
+shift in its position relative to background sources, such that its
+angular motion---known as its proper motion---can be
+measured. Combining the distance and angular velocity gives the
+components of the space velocity of a star that are perpendicular to
+the line of sight.
 
-When all three position coordinates of an object are known, i.e.~its
-position on the celestial sphere and the radial distance 1/\parallax\
-to it, its position can be specified in a rectangular coordinate
-system. We consider the following two rectangular coordinate systems:
-(1) the rectangular equatorial coordinate system and (2) the
-rectangular Galactic coordinate system. The rectangular equatorial
-coordinate system is defined as follows: the \eqz-axis is the axis
-that goes from the center of the celestial sphere to the \ncp; the
-\eqx-axis goes from the center to the vernal equinox \vernal; and the
-\eqy-axis completes the set such that the coordinate system is an
-orthogonal, right-handed system. The rectangular equatorial
-coordinates of a star are then given in terms of
+When all three position coordinates of an object are known, \ie, its
+position on the celestial sphere and the radial distance
+1/\parallax\ to it, its position can be specified in a rectangular
+coordinate system. We consider the following two rectangular
+coordinate systems: (1) the rectangular equatorial coordinate system
+and (2) the rectangular Galactic coordinate system. The rectangular
+equatorial coordinate system is defined as follows: the \eqz-axis is
+the axis that goes from the center of the celestial sphere to the
+\ncp; the \eqx-axis goes from the center to the vernal equinox
+\vernal; and the \eqy-axis completes the set such that the coordinate
+system is an orthogonal, right-handed system. The rectangular
+equatorial coordinates of a star are then given in terms of
 (1/\parallax,\ra,\dec) as:
 \begin{align}\label{eq:receq}
 \eqx &= \frac{1}{\parallax} \cos \dec \cos \ra\, ,\\
@@ -515,11 +526,15 @@ We define
 \matrixleft \begin{array}{ccc} \cos \galb & 0 & -\sin \galb\\ 0 & 1 & 0 \\ \sin \galb  & 0 & \cos\galb\end{array} \matrixright\, ,
 \end{equation}
 $\dot{\gall} \equiv \pmll$, and $\dot{\galb} \equiv \pmbb$, such that
-\begin{equation}
-\matrixleft \begin{array}{c} \vrr  \\ \frac{1}{\parallax}\,\pmll\,\cos\galb\\\frac{1}{\parallax}\pmbb\end{array} \matrixright = 
-\RR \matrixleft \begin{array}{c} \galU \\ \galV \\ \galW \end{array} \matrixright\, .
+\begin{equation}\label{eq:vrpmllpmbbtoUVW}
+\matrixleft \begin{array}{c} \vrr  \\ \frac{k}{\parallax}\,\pmll\,\cos\galb\\\frac{k}{\parallax}\pmbb\end{array} \matrixright = 
+\RR \matrixleft \begin{array}{c} \galU \\ \galV \\ \galW \end{array} \matrixright\, ,
 \end{equation}
-Defining $\vll \equiv \frac{1}{\parallax}\,\pmll\,\cos\galb$ and $\vbb \equiv \frac{1}{\parallax}\pmbb$ this becomes
+where we have included the $k$ factor defined above to allow
+parallaxes and proper motions to be specified in \arcsecs\ and
+\arcsecs\ yr$^{-1}$, repectively. Defining $\vll \equiv
+\frac{k}{\parallax}\,\pmll\,\cos\galb$ and $\vbb \equiv
+\frac{k}{\parallax}\pmbb$ this becomes
 \begin{equation}\label{eq:UVWtovrvlvb1}
 \matrixleft \begin{array}{c} \vrr  \\ \vll\\\vbb\end{array} \matrixright = 
 \RR \matrixleft \begin{array}{c} \galU \\ \galV \\ \galW \end{array} \matrixright\, .
@@ -533,7 +548,7 @@ can then be written by combining (\ref{eq:vrpmrapmdectoUVW2}) and
 \end{equation}
 
 
-\subsection{Straight from (\pmra,\pmdec) to (\pmll,\pmbb)}
+\subsection{Straight from (\pmra,\pmdec) to (\pmll,\pmbb)}\label{sec:pmtrans}
 
 \eqnnumber~(\ref{eq:UVWtovrvlvb2}) can be simplified to a single
 rotation such that
@@ -552,27 +567,31 @@ using the identities from \eqnnumber~(\ref{eq:radectolb}) that the
 
 Therefore, one can directly transform measured proper motions in
 celestial coordinates into proper motions in Galactic coordinates as
-\begin{equation}
+\begin{equation}\label{eq:pmtrans}
 \matrixleft \begin{array}{c} \pmll\,\cos\galb\\\pmbb\end{array} \matrixright = 
 \matrixleft \begin{array}{cc} \cos \phi & \sin \phi \\ -\sin\phi & \cos\phi\end{array} \matrixright \,\matrixleft \begin{array}{c} \pmra\,\cos\dec\\\pmdec\end{array} \matrixright
 \, .
 \end{equation}
-
+We will denote the transformation matrix in this \eqnname\ as \PP.
 
 
 \section{Uncertainty propagation}\label{sec:errorprop}
 
 Propagation of observational uncertainties is simple using the matrix
 formalism employed above. We assume that uncertainties in the
-direction $(\ra,dec)$ of an object is negligible, but we make no other
-assumptions about the independence of the uncertainties of the other
-quantities since for example the scanning strategy of astrometric
-satellites can give rise to correlated proper motion measurements.
+direction $(\ra,\dec)$ of an object are negligible, but we make no
+other assumptions about the independence of the uncertainties of the
+other quantities since for example the scanning strategy of
+astrometric satellites can give rise to correlated proper motion
+measurements.
 
 In what follows we give formulas for first-order uncertainty
 propagation. We assume that we know the distance uncertainty
 $\sigma_d$. If the distance is measured as a parallax, this distance
-uncertainty is given by $\sigma_d = \sigma_\parallax/\parallax^2$.
+uncertainty is given by $\sigma_d =
+\sigma_\parallax/\parallax^2$. Proper accounting for the non-linear
+nature of the transformations above should go beyond this first-order
+calculation or employ a Monte Carlo uncertainty propagation.
 
 \subsection{Cov($d$,\vrr,\pmra,\pmdec) to Cov(\galU,\galV,\galW)}
 
@@ -590,7 +609,10 @@ The transformation (i) is non-linear, so we compute the Jacobian as
 \end{equation}
 Then we have that
 \begin{equation}
-\mathrm{Cov}(\vra,\vdec) = \frac{\partial \left( \vra,\vdec\right)}{\partial \left(d,\pmra,\pmdec\right)} \mathrm{Cov}(d,\pmra,\pmdec) \frac{\partial \left( \vra,\vdec\right)}{\partial \left(d,\pmra,\pmdec\right)}\T\,. 
+\mathrm{Cov}(\vra,\vdec) = \frac{\partial \left(
+  \vra,\vdec\right)}{\partial \left(d,\pmra,\pmdec\right)}
+\mathrm{Cov}(d,\pmra,\pmdec) \frac{\partial \left(
+  \vra,\vdec\right)}{\partial \left(d,\pmra,\pmdec\right)}\T\,.
 \end{equation}
 
 The transformation (ii) is given by
@@ -599,8 +621,38 @@ The transformation (ii) is given by
 \mathrm{Cov}(\galU,\galV,\galW) = \TT\,\AAA \, \mathrm{Cov}(\vrr,\vra,\vdec) \, \AAA\T\,\TT\T\,.
 \end{equation}
 
+\subsection{Cov($d$,\vrr,\pmll,\pmbb) to Cov(\galU,\galV,\galW)}
+
+This uncertainty propagation is similar to that in the \sectionname\ above. We again split the transformation into (i) Cov($d$,\pmll,\pmbb) to Cov(\vll,\vbb) and (ii) Cov(\vrr,\vll,\vbb) to Cov(\galU,\galV,\galW), where $\vll \equiv
+\frac{k}{\parallax}\,\pmll\,\cos\galb$ and $\vbb \equiv \frac{k}{\parallax}\pmbb$.
+
+The transformation (i) is non-linear with Jacobian
+\begin{equation}
+\frac{\partial \left(\vll,\vbb\right)}{\partial\left(d,\pmll,\pmbb\right)}
+= k\,\matrixleft \begin{array}{ccc} \pmll \cos \galb & d & 0\\\pmbb & 0 & d\end{array} \matrixright \,.
+\end{equation}
+Then we have that
+\begin{equation}
+\mathrm{Cov}(\vll,\vbb) = \frac{\partial \left(
+  \vll,\vbb\right)}{\partial \left(d,\pmll,\pmbb\right)}
+\mathrm{Cov}(d,\pmll,\pmbb) \frac{\partial \left(
+  \vll,\vbb\right)}{\partial \left(d,\pmll,\pmbb\right)}\T\,.
+\end{equation}
+
+The transformation (ii) is given by
+\eqnname~(\ref{eq:UVWtovrvlvb1}) such that we simply find
+\begin{equation}
+\mathrm{Cov}(\galU,\galV,\galW) = \RR^{-1}\, \mathrm{Cov}(\vrr,\vll,\vbb) \, \RR\iT\,.
+\end{equation}
+
 \subsection{Cov(\pmra,\pmdec) to Cov(\pmll,\pmbb)}
 
-\subsection{Cov($d$,\vrr,\pmll,\pmbb) to Cov(\galU,\galV,\galW)}
+To propagate the proper motion uncertainty in \ra\ and \dec\ to that
+in Galactic coordinates (see \sectionname~\ref{sec:pmtrans}) we simply do
+\begin{equation}
+\mathrm{Cov}(\pmll \cos \galb,\pmbb) = \PP\, \mathrm{Cov}(\pmra \cos \dec ,\pmdec) \,\PP\T\,,
+\end{equation}
+where \PP\ is defined below \eqnname~\ref{eq:pmtrans}.
+
 
 

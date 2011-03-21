@@ -8,7 +8,7 @@ all: ms.pdf
 %.ps: %.dvi
 	dvips -t letter $< -o
 
-%.dvi: %.tex
+ms.dvi: ms.tex stellarkinematics.tex
 	latex $<
 	latex $<
 	- bash -c " ( grep undefined $*.log && latex $< ) || echo noRerun "
@@ -24,7 +24,7 @@ all: ms.pdf
 #	cp $(@)_tmp $< 
 #	rm $(@)_edcmd $(@)_tmp
 
-#%.dvi: %.tex
+%.dvi: %.tex
 
 .PHONY: clean spotless
 
