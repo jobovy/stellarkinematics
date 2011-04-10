@@ -1,0 +1,77 @@
+\documentclass{article}
+\usepackage{tikz}
+\usetikzlibrary{calc,fadings,decorations.pathreplacing}
+%% helper macros
+
+\newcommand\pgfmathsinandcos[3]{%
+  \pgfmathsetmacro#1{sin(#3)}%
+  \pgfmathsetmacro#2{cos(#3)}%
+}
+\newcommand\LongitudePlane[3][current plane]{%
+  \pgfmathsinandcos\sinEl\cosEl{#2} % elevation
+  \pgfmathsinandcos\sint\cost{#3} % azimuth
+  \tikzset{#1/.estyle={cm={\cost,\sint*\sinEl,0,\cosEl,(0,0)}}}
+}
+\newcommand\LatitudePlane[3][current plane]{%
+  \pgfmathsinandcos\sinEl\cosEl{#2} % elevation
+  \pgfmathsinandcos\sint\cost{#3} % latitude
+  \pgfmathsetmacro\yshift{\cosEl*\sint}
+  \tikzset{#1/.estyle={cm={\cost,0,0,\cost*\sinEl,(0,\yshift)}}} %
+}
+\newcommand\DrawLongitudeCircle[2][1]{
+  \LongitudePlane{\angEl}{#2}
+  \tikzset{current plane/.prefix style={scale=#1}}
+   % angle of ``visibility''
+  \pgfmathsetmacro\angVis{atan(sin(#2)*cos(\angEl)/sin(\angEl))} %
+  \draw[current plane] (\angVis:1) arc (\angVis:\angVis+180:1);
+  \draw[current plane,dashed] (\angVis-180:1) arc (\angVis-180:\angVis:1);
+}
+\newcommand\DrawLatitudeCircle[2][1]{
+  \LatitudePlane{\angEl}{#2}
+  \tikzset{current plane/.prefix style={scale=#1}}
+  \pgfmathsetmacro\sinVis{sin(#2)/cos(#2)*sin(\angEl)/cos(\angEl)}
+  % angle of ``visibility''
+  \pgfmathsetmacro\angVis{asin(min(1,max(\sinVis,-1)))}
+  \draw[current plane] (\angVis:1) arc (\angVis:-\angVis-180:1);
+  \draw[current plane,dashed] (180-\angVis:1) arc (180-\angVis:\angVis:1);
+}
+
+%% document-wide tikz options and styles
+
+\tikzset{%
+  >=latex, % option for nice arrows
+  inner sep=0pt,%
+  outer sep=2pt,%
+  mark coordinate/.style={inner sep=0pt,outer sep=0pt,minimum size=3pt,
+    fill=black,circle}%
+}
+
+\begin{document}
+
+\begin{tikzpicture}
+
+%definitions
+\def\R{2.5} % sphere radius
+\def\angEl{25} % elevation angle
+\def\angPhiX{-45} % longitude of point X
+\def\angPhiGamma{-95} % longitude of point Gamma
+\def\angBetaX{40} % latitude of point X
+\def\angBetaGamma{0} % latitude of point Gamma
+\pgfmathsetmacro\H{\R*cos(\angEl)} % distance to north pole
+\coordinate[mark coordinate] (P) at (0,\H);
+\coordinate[mark coordinate] (X) at (1.35133049720443244,1.1261346280954301);
+%\coordinate[mark coordinate] (G) at (-1.4354339,-.87452451304991058);
+\draw[] (0,0) circle (\R);
+\DrawLatitudeCircle[\R]{0.}
+\DrawLongitudeCircle[\R]{-40.}
+%labels
+%\draw[->,thin] (-.8,1.4) to[bend right=21.]
+%   node[pos=0.4,above] {$\alpha$} (1.05,1.4);
+\node[above=8pt] at (P) {$P$};
+\node[below=10pt,left=0pt] at (X) {$X$};
+%\node[above=8pt,right=4pt] at (G) {$\Upsilon$};
+%\node[above=8pt,right=4pt,rotate=-50.] at (.46133049720443244,1.8561346280954301) {$90^\circ-\delta$};
+
+\end{tikzpicture}
+
+\end{document}

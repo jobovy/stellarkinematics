@@ -1,7 +1,7 @@
 RM=/bin/rm -vf
-.SECONDARY: radec_fig.ps
+.SECONDARY: radec_fig.ps lb_fig.ps
 
-all: ms.pdf 
+all: ms.pdf lb_fig.pdf
 
 %.pdf: %.ps
 	ps2pdf -dMaxSubsetPct=100 -dCompatibilityLevel=1.2 -dSubsetFonts=true -dEmbedAllFonts=true $<
