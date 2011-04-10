@@ -3,27 +3,28 @@
 
 The equatorial coordinates right ascension (\ra) and declination
 (\dec) are defined as follows: Consider a very large sphere centered
-at the center of the Earth. The intersection of the Earth's axis of
-rotation with this sphere is labeled as \ncp\ (which we sometimes
-abbreviate even further as \ncpp), the North Celestial Pole. On this
-sphere there are parallels and meridians completely analogous to those
-defined on the surface of the Earth. Consider a star at a position $X$
-on this sphere. The declination of that star is then defined as the
-complement of the arc between \ncp\ and $X$ on the meridian connecting
-these two points. The right ascension of the star is defined as the
-angle between the meridian through \ncp\ and $X$ and a reference
-meridian. This reference meridian is defined as the meridian which
-intersects the celestial equator (the intersection of the plane in
-which the Earth's equator lies and the celestial sphere) at the point
-in which the intersection of the ecliptic, \ie, the plane in which the
-Earth's orbit around the Sun lies, with the celestial sphere, the
-``celestial ecliptic`'' if you will, intersects with the celestial
-equator; this defines two points, the point chosen is the point at
-which the Sun crosses the equatorial plane from South to North. This
-event is called the (northern) vernal equinox and it happens around
-March 21. The location of the vernal equinox on the celestial sphere
-is denoted by \vernal\ \citep[][pp.14-6]{Green85a}. Therefore,
-\ra\ and \dec\ are formally defined as
+at the center of the Earth (see \figurename~\ref{fig:eq}). The
+intersection of the Earth's axis of rotation with this sphere is
+labeled as \ncp\ (which we sometimes abbreviate even further as
+\ncpp), the North Celestial Pole. On this sphere there are parallels
+and meridians completely analogous to those defined on the surface of
+the Earth. Consider a star at a position $X$ on this sphere. The
+declination of that star is then defined as the complement of the arc
+between \ncp\ and $X$ on the meridian connecting these two points. The
+right ascension of the star is defined as the angle between the
+meridian through \ncp\ and $X$ and a reference meridian. This
+reference meridian is defined as the meridian which intersects the
+celestial equator (the intersection of the plane in which the Earth's
+equator lies and the celestial sphere) at the point in which the
+intersection of the ecliptic, \ie, the plane in which the Earth's
+orbit around the Sun lies, with the celestial sphere, the ``celestial
+ecliptic`'' if you will, intersects with the celestial equator; this
+defines two points, the point chosen is the point at which the Sun
+crosses the equatorial plane from South to North. This event is called
+the (northern) vernal equinox and it happens around March 21. The
+location of the vernal equinox on the celestial sphere is denoted by
+\vernal\ \citep[][pp.14-6]{Green85a}. Therefore, \ra\ and \dec\ are
+formally defined as
 \begin{align}
 \dec &= 90\degree - \ncpp X\, ,\\
 \ra &= \vernal \ncpp X \, .
@@ -31,9 +32,12 @@ is denoted by \vernal\ \citep[][pp.14-6]{Green85a}. Therefore,
 Declinations run from $-90\degree$ to $90\degree$ whereas right
 ascensions can take on any value between $0\degree$ and $360\degree$.
 
-BOVY: A FIGURE WOULD PROBABLY HELP TO MAKE THE PREVIOUS PARAGRAPH
-COMPREHENSIBLE.
-
+\begin{figure}[htp]
+\begin{center}
+\includegraphics[]{radec_fig.eps}
+\caption{Definition of the equatorial coordinate system.}\label{fig:eq}
+\end{center}
+\end{figure}
 
 Galactic coordinates, \ie, a system of coordinates that has the
 Galactic plane as its equatorial plane, were introduced as early as

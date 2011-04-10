@@ -1,6 +1,7 @@
 RM=/bin/rm -vf
+.SECONDARY: radec_fig.ps
 
-all: ms.pdf
+all: ms.pdf 
 
 %.pdf: %.ps
 	ps2pdf -dMaxSubsetPct=100 -dCompatibilityLevel=1.2 -dSubsetFonts=true -dEmbedAllFonts=true $<
@@ -8,23 +9,28 @@ all: ms.pdf
 %.ps: %.dvi
 	dvips -t letter $< -o
 
-ms.dvi: ms.tex stellarkinematics.tex
+ms.dvi: ms.tex stellarkinematics.tex radec_fig.eps
 	latex $<
 	latex $<
 	- bash -c " ( grep undefined $*.log && latex $< ) || echo noRerun "
 	- bash -c " ( grep undefined $*.log && latex $< ) || echo noRerun "
 	- bash -c " ( grep undefined $*.log && latex $< ) || echo noRerun "
 
-#%.eps: %.ps
-#	cp $< $(@)_tmp
-#	echo "1,\$$s/%%BoundingBox: 27 195 585 596/%%BoundingBox: 30 358 337 562/g" > $(@)_edcmd
-#	echo "w" >> $(@)_edcmd
-#	ed $< < $(@)_edcmd
-#	cp $< $@
-#	cp $(@)_tmp $< 
-#	rm $(@)_edcmd $(@)_tmp
+%.eps: %.ps
+	cp $< $(@)_tmp
+	echo "1,\$$s/%%BoundingBox: 0 0 612 792/%%BoundingBox: 154 508 299 675/g" > $(@)_edcmd
+	echo "w" >> $(@)_edcmd
+	ed $< < $(@)_edcmd
+	cp $< $@
+	cp $(@)_tmp $< 
+	rm $(@)_edcmd $(@)_tmp
 
 %.dvi: %.tex
+	latex $<
+	latex $<
+	- bash -c " ( grep undefined $*.log && latex $< ) || echo noRerun "
+	- bash -c " ( grep undefined $*.log && latex $< ) || echo noRerun "
+	- bash -c " ( grep undefined $*.log && latex $< ) || echo noRerun "
 
 .PHONY: clean spotless
 
