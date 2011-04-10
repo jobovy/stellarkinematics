@@ -1,7 +1,7 @@
 RM=/bin/rm -vf
 .SECONDARY: radec_fig.ps lb_fig.ps
 
-all: ms.pdf lb_fig.pdf
+all: ms.pdf
 
 %.pdf: %.ps
 	ps2pdf -dMaxSubsetPct=100 -dCompatibilityLevel=1.2 -dSubsetFonts=true -dEmbedAllFonts=true $<
@@ -9,7 +9,7 @@ all: ms.pdf lb_fig.pdf
 %.ps: %.dvi
 	dvips -t letter $< -o
 
-ms.dvi: ms.tex stellarkinematics.tex radec_fig.eps
+ms.dvi: ms.tex stellarkinematics.tex radec_fig.eps lb_fig.eps
 	latex $<
 	latex $<
 	- bash -c " ( grep undefined $*.log && latex $< ) || echo noRerun "

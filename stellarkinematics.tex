@@ -54,17 +54,18 @@ radio observations had also shown that the compact radio source
 Sagittarius A* is at the center of the Galaxy and its position was
 used to define the zero of the Galactic longitude.
 
-In detail the Galactic coordinate system is defined as follows: Let
-\ngp\ be the point on the celestial sphere corresponding to the North
-Galactic Pole (we will also sometimes just call this \ngpg, when
-brevity is required). The Galactic latitude \galb\ is the defined as
-the complement of the arc along the great circle connecting the star's
-position $X$ to \ngp. Let \gc\ be the point on the Galactic equator
-(that is, the intersection of the Galactic plane with the celestial
-sphere) corresponding to the Galactic center (sometimes simply
-\gcc). The Galactic longitude \gall\ of the star $X$ is then the angle on the
-celestial sphere between the meridian through the \ngp\ and $X$ and the
-meridian through the \ngp\ and the \gc. That is
+In detail the Galactic coordinate system is defined as follows (see
+\figurename~\ref{fig:lb}): Let \ngp\ be the point on the celestial
+sphere corresponding to the North Galactic Pole (we will also
+sometimes just call this \ngpg, when brevity is required). The
+Galactic latitude \galb\ is the defined as the complement of the arc
+along the great circle connecting the star's position $X$ to \ngp. Let
+\gc\ be the point on the Galactic equator (that is, the intersection
+of the Galactic plane with the celestial sphere) corresponding to the
+Galactic center (sometimes simply \gcc). The Galactic longitude
+\gall\ of the star $X$ is then the angle on the celestial sphere
+between the meridian through the \ngp\ and $X$ and the meridian
+through the \ngp\ and the \gc. That is
 \begin{align}\label{eq:galcodef}
 \galb &= 90\degree - \ngpg X \, ,\\
 \gall &= \gcc \ngpg X \, .
@@ -108,13 +109,19 @@ the pole $A$, and similarly for $B$ and $C$. Then the following holds:
 
 \subsection{The transformation from (\ra,\dec) to (\gall,\galb)}
 
-BOVY: AGAIN FIGURE WOULD BE NICE.
+\begin{figure}[htp]
+\begin{center}
+\includegraphics[]{../stellarkinematics/lb_fig.eps}
+\caption{Transformation between the equatorial and Galactic coordinate
+  systems.}\label{fig:lb}
+\end{center}
+\end{figure}
 
 We can now derive the transformation from equatorial coordinates to
 Galactic coordinates. We will consider the spherical triangle $\ngpg P
-X$ on the celestial sphere. If the point $X$ has Galactic coordinates
-(\gall,\galb) and equatorial coordinates (\ra,\dec) then we have the
-following \citep{Green85a}:
+X$ on the celestial sphere (see \figurename~\ref{fig:lb}). If the
+point $X$ has Galactic coordinates (\gall,\galb) and equatorial
+coordinates (\ra,\dec) then we have the following \citep{Green85a}:
 \begin{align}\label{eq:triangleGPX}
 \ncpp X &= 90\degree-\dec\, ,\\
 \ngpg X &= 90\degree - \galb\, ,\\
@@ -142,7 +149,7 @@ and this becomes using (\ref{eq:triangleGPX})
 \begin{equation}
 \frac{\sin(\ra-\rangp)}{\sin(90\degree - \galb)} = \frac{\sin(\theta-\gall)}{\sin(90\degree-\dec)}\, ,
 \end{equation}
-which is simply
+which is
 \begin{equation}\label{eq:radectolb2}
 \cos \galb \sin(\theta-\gall)=\cos \dec \sin (\ra-\rangp)\, .
 \end{equation}
@@ -616,7 +623,7 @@ Then we have that
 \end{equation}
 
 The transformation (ii) is given by
-\eqnname~(\ref{eq:vrpmrapmdectoUVW1}) such that we simply find
+\eqnname~(\ref{eq:vrpmrapmdectoUVW1}) such that we find
 \begin{equation}
 \mathrm{Cov}(\galU,\galV,\galW) = \TT\,\AAA \, \mathrm{Cov}(\vrr,\vra,\vdec) \, \AAA\T\,\TT\T\,.
 \end{equation}
@@ -640,7 +647,7 @@ Then we have that
 \end{equation}
 
 The transformation (ii) is given by
-\eqnname~(\ref{eq:UVWtovrvlvb1}) such that we simply find
+\eqnname~(\ref{eq:UVWtovrvlvb1}) such that we find
 \begin{equation}
 \mathrm{Cov}(\galU,\galV,\galW) = \RR^{-1}\, \mathrm{Cov}(\vrr,\vll,\vbb) \, \RR\iT\,.
 \end{equation}
@@ -648,7 +655,7 @@ The transformation (ii) is given by
 \subsection{Cov(\pmra,\pmdec) to Cov(\pmll,\pmbb)}
 
 To propagate the proper motion uncertainty in \ra\ and \dec\ to that
-in Galactic coordinates (see \sectionname~\ref{sec:pmtrans}) we simply do
+in Galactic coordinates (see \sectionname~\ref{sec:pmtrans}) we do
 \begin{equation}
 \mathrm{Cov}(\pmll \cos \galb,\pmbb) = \PP\, \mathrm{Cov}(\pmra \cos \dec ,\pmdec) \,\PP\T\,,
 \end{equation}
