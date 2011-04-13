@@ -239,7 +239,7 @@ which means that we can write the matrix $\TT$ in (\ref{eq:radectolbmatrix}) as
 \matrixleft \begin{array}{ccc} \cos \rangp &\sin\rangp&0\\ -\sin\rangp & \cos\rangp&0\\ 0&0&1\end{array} \matrixright\, ,
 \end{equation}
 which is slightly different from but agrees with the representation
-given by \citet{1987AJ.....93..864J}
+given by \citet{1987AJ.....93..864J}.
 
 \subsection{The transformation from (\ra,\dec) to (\gall,\galb) for general epochs}
 
@@ -348,7 +348,7 @@ The procedure to transform the position of a star given in (\ra,\dec)
 at a given epoch to its Galactic coordinates (\gall,\galb) is now as
 follows: First calculate the position of the \ngp\ and the \gc\ in
 equatorial coordinates using (\ref{eq:radecJtoradect}) with the values
-given in (\ref{eq:ngpgcJ2000.0}); then use (\ref{eq:thetaJ2000.0}) to
+given in (\ref{eq:ngpgcJ2000.0}); then use (\ref{eq:thetafngpgc}) to
 calculate the position angle of the \gc\ for the given epoch; finally
 evaluate the transformation matrix $\TT$ (\ref{eq:radectolbT}) for the
 calculated values (\rangp,\decngp,$\theta$) and apply this
@@ -414,7 +414,7 @@ system is conventially denoted as
 \begin{equation}
 (\galU,\galV,\galW) \equiv (\dot{\galx},\dot{\galy},\dot{\galz})\, .
 \end{equation}
-Since observations of a the movement of a star are generally done by
+Since observations of the movement of a star are generally done by
 comparing the (\ra,\dec) of the star at different epochs, while
 measurements of its motion in the radial direction are done using the
 Doppler shift displayed in the star's spectrum, which measures the
@@ -422,7 +422,7 @@ change in the distance \radialdist = 1/\parallax\ directly, we will
 relate the velocity components \galU, \galV, and \galW\ to the changes
 $\dot{d} \equiv \vrr$, $\dot{\ra}$, and $\dot{\dec}$. In the following
 we will be dealing with the distance \radialdist, with the tacit
-implication that actual distances are measured as inverse parallaxes,
+assumption that actual distances are measured as inverse parallaxes,
 while changes in distances are directly measured.
 
 The transformation between the rectangular equatorial coordinate
