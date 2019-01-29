@@ -1,6 +1,16 @@
 \documentclass[12pt,preprint]{aastex}
 
 \usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{color}
+\definecolor{linkcolor}{rgb}{0,0,0.5}
+\hypersetup{
+  colorlinks=true,        % false: boxed links; true: colored links
+  linkcolor=linkcolor,    % color of internal links
+  citecolor=linkcolor,    % color of links to bibliography
+  filecolor=linkcolor,    % color of file links
+  urlcolor=linkcolor      % color of external links
+}
 
 \newcounter{address}
 %\newcommand{\latin}[1]{\textit{#1}}
@@ -136,10 +146,10 @@
 \author{
   Jo Bovy}
 
-\date{\centering{\it Draft, \today}}
-
 \begin{abstract}
-We present the transformations from observed kinematical quantities
+This document is the appendix of my PhD thesis, available
+{\bf \href{http://adsabs.harvard.edu/abs/2011PhDT........86B}{here}}. I
+present the transformations from observed kinematical quantities
 (\ra,\dec,\parallax,\pmra,\pmdec) into Galactic quantities
 (\galU,\galV,\galW) and (\pmll,\pmbb).
 \end{abstract}
