@@ -34,7 +34,7 @@ ascensions can take on any value between $0\degree$ and $360\degree$.
 
 \begin{figure}[htp]
 \begin{center}
-\includegraphics[clip=]{radec_fig.eps}
+\includegraphics[clip=]{radec_fig}
 \caption{Definition of the equatorial coordinate system.}\label{fig:eq}
 \end{center}
 \end{figure}
@@ -111,7 +111,7 @@ the pole $A$, and similarly for $B$ and $C$. Then the following holds:
 
 \begin{figure}[htp]
 \begin{center}
-\includegraphics[clip=]{lb_fig.eps}
+\includegraphics[clip=]{lb_fig}
 \caption{Transformation between the equatorial and Galactic coordinate
   systems.}\label{fig:lb}
 \end{center}
@@ -470,7 +470,7 @@ which can be further simplified as
 \\ \cos \dec \sin \ra\, \dot{\radialdist} - \radialdist \sin \dec \sin \ra\, \dot{\dec} + \radialdist \cos \dec \cos \ra\, \dot{\ra} 
 \\ \sin \dec\, \dot{\radialdist} + \radialdist \cos \dec\, \dot{\dec} \end{array} \matrixright= 
 \matrixleft \begin{array}{ccc} \cos \ra & -\sin \ra & 0 \\ \sin \ra & \cos \ra & 0 \\ 0 & 0 & 1 \end{array} \matrixright
-\matrixleft \begin{array}{ccc} \cos \dec & 0 & \sin \dec\\ 0 & 1 & 0 \\ \sin \dec  & 0 & \cos\dec\end{array} \matrixright
+\matrixleft \begin{array}{ccc} \cos \dec & 0 & -\sin \dec\\ 0 & 1 & 0 \\ \sin \dec  & 0 & \cos\dec\end{array} \matrixright
 \matrixleft \begin{array}{c} \dot{\radialdist} \\ \radialdist\,\dot{\ra}\,\cos\dec\\\radialdist\dot{\dec}\end{array} \matrixright\, .
 \end{equation}
 We define
@@ -524,7 +524,7 @@ write
 \begin{equation}
 \matrixleft \begin{array}{c} \galU \\ \galV \\ \galW \end{array} \matrixright =
 \matrixleft \begin{array}{ccc} \cos \gall & -\sin \gall & 0 \\ \sin \gall & \cos \gall & 0 \\ 0 & 0 & 1 \end{array} \matrixright
-\matrixleft \begin{array}{ccc} \cos \galb & 0 & \sin \galb\\ 0 & 1 & 0 \\ \sin \galb  & 0 & \cos\galb\end{array} \matrixright
+\matrixleft \begin{array}{ccc} \cos \galb & 0 & -\sin \galb\\ 0 & 1 & 0 \\ \sin \galb  & 0 & \cos\galb\end{array} \matrixright
 \matrixleft \begin{array}{c} \dot{\radialdist} \\ \radialdist\,\dot{\gall}\,\cos\galb\\\radialdist\dot{\galb}\end{array} \matrixright\, .
 \end{equation}
 We define
