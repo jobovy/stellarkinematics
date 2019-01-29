@@ -9,12 +9,12 @@ all: ms.pdf
 %.ps: %.dvi
 	dvips -t letter $< -o
 
-ms.dvi: ms.tex stellarkinematics.tex radec_fig.eps lb_fig.eps
-	latex $<
-	latex $<
-	- bash -c " ( grep undefined $*.log && latex $< ) || echo noRerun "
-	- bash -c " ( grep undefined $*.log && latex $< ) || echo noRerun "
-	- bash -c " ( grep undefined $*.log && latex $< ) || echo noRerun "
+ms.pdf: ms.tex stellarkinematics.tex
+	pdflatex $<
+	pdflatex $<
+	- bash -c " ( grep undefined $*.log && pdflatex $< ) || echo noRerun "
+	- bash -c " ( grep undefined $*.log && pdflatex $< ) || echo noRerun "
+	- bash -c " ( grep undefined $*.log && pdflatex $< ) || echo noRerun "
 
 %.eps: %.ps
 	cp $< $(@)_tmp
